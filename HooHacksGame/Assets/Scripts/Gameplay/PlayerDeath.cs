@@ -30,6 +30,9 @@ namespace Platformer.Gameplay
                 player.animator.SetTrigger("hurt");
                 player.animator.SetBool("dead", true);
                 Simulation.Schedule<PlayerSpawn>(2);
+                GameObject obj = GameObject.FindWithTag("DisplayCanvas"); 
+                ShowText fail = obj.AddComponent<ShowText>();
+                fail.SetTextToDisplayAndCleanIt("You can't always succeed on the first try."); 
             }
         }
     }

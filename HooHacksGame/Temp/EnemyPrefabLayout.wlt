@@ -427,7 +427,7 @@ MonoBehaviour:
   m_LastFolders:
   - Assets/Prefabs
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: E:\Dev\HooHacks\HooHacksGame\HooHacksGame
+  m_LastProjectPath: C:\Users\aweso\OneDrive\Documents\GitHub\HooHacksGame\HooHacksGame
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:

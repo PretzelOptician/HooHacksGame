@@ -33,13 +33,13 @@ namespace Platformer.Mechanics
         /*internal new*/ public AudioSource audioSource;
         public Health health;
         public bool controlEnabled = true;
+        public double decelX = -0.1;  
 
         bool jump;
         Vector2 move;
         SpriteRenderer spriteRenderer;
         internal Animator animator;
         readonly PlatformerModel model = Simulation.GetModel<PlatformerModel>();
-
         public Bounds Bounds => collider2d.bounds;
 
         void Awake()
@@ -66,7 +66,9 @@ namespace Platformer.Mechanics
             }
             else
             {
-                move.x = 0;
+                if(move.x>0) {
+                    move.x = (float) move.x + (float) decelX;
+                }
             }
             UpdateJumpState();
             base.Update();
@@ -127,6 +129,10 @@ namespace Platformer.Mechanics
             animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
 
             targetVelocity = move * maxSpeed;
+        }
+
+        public void changeVelocity() {
+            move.x = -6;
         }
 
         public enum JumpState
